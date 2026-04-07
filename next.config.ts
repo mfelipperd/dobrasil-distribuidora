@@ -4,8 +4,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/",
+        destination: "/doce-de-leite",
+        permanent: false,
+      },
+      {
         source: "/qrcode",
-        destination: "/",
+        destination: "/doce-de-leite",
+        permanent: true,
+      },
+      {
+        source: "/scan",
+        destination: "/doce-de-leite",
         permanent: true,
       },
     ];

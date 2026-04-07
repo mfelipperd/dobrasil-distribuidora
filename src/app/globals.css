@@ -1,37 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F2E8D5;
-  --foreground: #7B3F21;
-  --primary: #7B3F21;
-  --accent: #3A92CE;
+  --background: 40 40% 90%;
+  --foreground: 20 57% 31%;
+  --card: 40 40% 90%;
+  --card-foreground: 20 57% 31%;
+  --popover: 40 40% 90%;
+  --popover-foreground: 20 57% 31%;
+  --primary: 20 57% 31%;
+  --primary-foreground: 40 40% 90%;
+  --secondary: 40 30% 85%;
+  --secondary-foreground: 20 57% 31%;
+  --muted: 40 30% 85%;
+  --muted-foreground: 20 20% 45%;
+  --accent: 204 60% 52%;
+  --accent-foreground: 40 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 40 40% 98%;
+  --border: 20 57% 31% / 0.2;
+  --input: 20 57% 31% / 0.2;
+  --ring: 20 57% 31%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
+
+  --container-padding: 2rem;
+  @media (max-width: 1024px) {
+    --container-padding: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    --container-padding: 1rem;
+  }
+
+  /* Corporate / Distributor Identity */
+  --corporate: 221 39% 11%;
+  --corporate-foreground: 210 40% 98%;
+  --corporate-accent: 35 92% 33%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-accent: var(--accent);
+.dark {
+  --background: 20 57% 20%;
+  --foreground: 40 40% 90%;
+  --card: 20 57% 20%;
+  --card-foreground: 40 40% 90%;
+  --popover: 20 57% 20%;
+  --popover-foreground: 40 40% 90%;
+  --primary: 40 40% 90%;
+  --primary-foreground: 20 57% 31%;
+  --secondary: 20 40% 30%;
+  --secondary-foreground: 40 40% 90%;
+  --muted: 20 40% 30%;
+  --muted-foreground: 40 20% 70%;
+  --accent: 204 60% 52%;
+  --accent-foreground: 40 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 40 40% 98%;
+  --border: 40 40% 90% / 0.2;
+  --input: 40 40% 90% / 0.2;
+  --ring: 40 40% 90%;
+}
+
+@theme {
+  --container-center: true;
+  --container-padding: var(--container-padding);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-corporate: hsl(var(--corporate));
+  --color-corporate-foreground: hsl(var(--corporate-foreground));
+  --color-corporate-accent: hsl(var(--corporate-accent));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Tailwind Preflight handles the reset better than a universal * reset. */
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
   font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import Card, { CardDivider } from "@/components/ui/Card";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const testimonials = [
@@ -35,26 +36,26 @@ const fadeUp = (delay = 0) => ({
 
 export default function Depoimentos() {
   return (
-    <section id="depoimentos" className="py-28 bg-[#EDE0CA]">
-      <div className="section-container">
+    <section id="depoimentos" className="py-16 lg:py-36 bg-secondary/10">
+      <div className="container mx-auto px-6 relative">
         <SectionHeader
           label="Quem já confia na DO Brasil"
           title="Parceiros que<br/>fazem a diferença."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {testimonials.map((t, i) => (
             <motion.div key={i} {...fadeUp(i * 0.12)}>
-              <Card className="flex flex-col h-full">
-                <Quote size={28} className="text-[#7B3F21]/20 mb-4 shrink-0" />
-                <p className="text-sm text-[#7B3F21]/75 font-sans font-light leading-relaxed italic flex-1">
+              <Card className="flex flex-col h-full p-8 rounded-2xl border-primary/10">
+                <Quote size={28} className="text-primary/20 mb-4 shrink-0" />
+                <p className="text-sm text-primary/75 font-sans font-light leading-relaxed italic mb-6 flex-1">
                   "{t.quote}"
                 </p>
-                <CardDivider />
+                <Separator className="mb-6 bg-primary/10" />
                 <div>
-                  <p className="font-serif text-[#7B3F21] font-semibold text-base">{t.author}</p>
-                  <p className="text-sm text-[#7B3F21]/55 font-sans mt-1">{t.role}</p>
-                  <p className="text-xs text-[#7B3F21]/35 font-sans mt-1 uppercase tracking-widest">{t.city}</p>
+                  <p className="font-serif text-primary font-semibold text-base">{t.author}</p>
+                  <p className="text-sm text-primary/55 font-sans mt-1">{t.role}</p>
+                  <p className="text-xs text-primary/35 font-sans mt-1 uppercase tracking-widest">{t.city}</p>
                 </div>
               </Card>
             </motion.div>

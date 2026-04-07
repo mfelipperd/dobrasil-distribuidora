@@ -23,9 +23,15 @@ export default function Header({
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b shadow-lg transition-colors duration-500 ${themeClass}`}
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center invisible">
-          {/* Logo oculta temporariamente por solicitação */}
-          <div className="h-10 w-[180px]"></div>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/images/DOBRASIL - amarela - fundo azul e verde.png" 
+            alt="DO Brasil Distribuidora" 
+            width={300} 
+            height={200} 
+            className="h-12 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {isProductPage ? (

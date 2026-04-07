@@ -8,9 +8,14 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-background py-14">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <Link href="/" className="items-center invisible hidden md:flex">
-          {/* Logo oculta temporariamente por solicitação. Hidden on mobile to avoid empty gaps, visible structually on desktop to keep justify-between balanced */}
-          <div className="h-8 w-[140px]"></div>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/images/DOBRASIL - original.png" 
+            alt="DO Brasil" 
+            width={400} 
+            height={100} 
+            className="h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+          />
         </Link>
 
         <p className="text-sm font-sans text-background/40 text-center leading-relaxed">

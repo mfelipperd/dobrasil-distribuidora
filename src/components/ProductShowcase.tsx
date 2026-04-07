@@ -51,7 +51,7 @@ export default function ProductShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-32 items-center">
           
           {/* MOBILE EXPERIENCE: Edge-to-Edge Image + Text */}
-          <div ref={mobileRef} className="relative -mx-6 w-[calc(100%+3rem)] aspect-[4/5] overflow-hidden shadow-2xl lg:hidden flex flex-col justify-center">
+          <div ref={mobileRef} className="relative -mx-6 w-[calc(100%+3rem)] aspect-4/5 overflow-hidden shadow-2xl lg:hidden flex flex-col justify-center">
             <motion.div style={{ filter: imageBlur }} className="absolute inset-0 z-0">
               <Image
                 src="/images/Gemini_Generated_Image_hgrowdhgrowdhgro (1).png"
@@ -64,7 +64,7 @@ export default function ProductShowcase() {
             {/* Dynamic Dark Brown Gradient triggered on scroll */}
             <motion.div 
                style={{ opacity: overlayOpacity }} 
-               className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/40 z-0" 
+               className="absolute inset-0 bg-linear-to-b from-primary/95 via-primary/80 to-primary/40 z-0" 
             />
             
             <motion.div 

@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ProductShowcase from "@/components/ProductShowcase";
+import TabelaNutricional from "@/components/TabelaNutricional";
+import Receitas from "@/components/Receitas";
 import Diferenciais from "@/components/Diferenciais";
 import Depoimentos from "@/components/Depoimentos";
 import Contato from "@/components/Contato";
@@ -19,6 +21,8 @@ export default function ProdutoPage() {
       <Hero />
       <About />
       <ProductShowcase />
+      <TabelaNutricional />
+      <Receitas />
       <Diferenciais />
       <Depoimentos />
       <Contato />

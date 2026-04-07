@@ -61,14 +61,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>

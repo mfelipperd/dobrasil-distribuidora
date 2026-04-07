@@ -54,7 +54,7 @@ function FeatureCard({ f, i }: { f: typeof features[0], i: number }) {
 
   return (
     <motion.div {...fadeUp(i * 0.1)} transition={{ duration: 0.25 }}>
-      <Card ref={ref} className="h-full p-8 rounded-3xl border-primary/5 hover:bg-primary/[0.02] transition-all duration-500 overflow-hidden group">
+      <Card ref={ref} className="h-full p-8 rounded-3xl border-primary/5 hover:bg-primary/2 transition-all duration-500 overflow-hidden group">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <motion.div 
             style={{ y }}
@@ -98,7 +98,7 @@ export default function Diferenciais() {
         {/* CTA Banner */}
         <motion.div
           {...fadeUp(0.35)}
-          className="mt-16 rounded-[2rem] bg-corporate px-12 py-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl shadow-corporate/20 border border-white/10"
+          className="mt-16 rounded-4xl bg-corporate px-12 py-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl shadow-corporate/20 border border-white/10"
         >
           <div className="max-w-xl">
             <p className="text-white/40 text-[10px] font-sans font-bold uppercase tracking-[0.3em] mb-3">

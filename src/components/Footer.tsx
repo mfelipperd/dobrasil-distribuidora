@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-background py-14">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <Link href="/" className="flex items-center invisible hidden md:flex">
+        <Link href="/" className="items-center invisible hidden md:flex">
           {/* Logo oculta temporariamente por solicitação. Hidden on mobile to avoid empty gaps, visible structually on desktop to keep justify-between balanced */}
           <div className="h-8 w-[140px]"></div>
         </Link>

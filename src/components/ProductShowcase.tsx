@@ -44,11 +44,28 @@ export default function ProductShowcase() {
   const textY = useTransform(mobProgress, [0, 1], [50, 0]);
 
   return (
-    <section id="produto" className="py-16 lg:py-36 bg-secondary/20 overflow-hidden" ref={containerRef}>
-      <div className="container mx-auto px-6">
-        <SectionHeader label="Nosso Produto Estrela" title="Noble Leche" />
+    <section id="produto" className="relative py-16 lg:py-12 bg-[#1a0f0a] overflow-hidden" ref={containerRef}>
+      {/* DESKTOP BACKGROUND LAYER */}
+      <div className="hidden lg:block absolute inset-0 z-0">
+        <Image
+          src="/images/Gemini_Generated_Image_m2opfym2opfym2op.png"
+          alt="Noble Leche Background"
+          fill
+          priority
+          quality={100}
+          className="object-cover object-left scale-105"
+        />
+        {/* Subtle overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-black/5" />
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-32 items-center">
+      <div className="container relative z-10 mx-auto px-6">
+        {/* Only show SectionHeader on mobile now */}
+        <div className="lg:hidden">
+          <SectionHeader label="Nosso Produto Estrela" title="Noble Leche" />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 items-center">
           
           {/* MOBILE EXPERIENCE: Edge-to-Edge Image + Text */}
           <div ref={mobileRef} className="relative -mx-6 w-[calc(100%+3rem)] aspect-4/5 overflow-hidden shadow-2xl lg:hidden flex flex-col justify-center">
@@ -61,7 +78,7 @@ export default function ProductShowcase() {
               />
             </motion.div>
             
-            {/* Dynamic Dark Brown Gradient triggered on scroll */}
+            {/* Dynamic Dark Brown Gradient */}
             <motion.div 
                style={{ opacity: overlayOpacity }} 
                className="absolute inset-0 bg-linear-to-b from-primary/95 via-primary/80 to-primary/40 z-0" 
@@ -83,60 +100,46 @@ export default function ProductShowcase() {
             </motion.div>
           </div>
 
-          {/* DESKTOP EXPERIENCE: Clean side-by-side Image */}
-          <motion.div
-            style={{ y: imageY }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="hidden lg:block relative h-[500px] w-full rounded-3xl overflow-hidden bg-background shadow-xl border border-primary/5"
-          >
-            <Image
-              src="/images/Gemini_Generated_Image_hgrowdhgrowdhgro (1).png"
-              alt="Noble Leche — Doce de Leite Premium"
-              fill priority
-              className="object-cover hover:scale-105 transition-transform duration-700 hover:rotate-1"
-            />
-          </motion.div>
-
-          {/* RIGHT COLUMN: Desktop Text + Global Specs & Buttons */}
-          <div className="flex flex-col gap-6 mt-10 lg:mt-0">
+          {/* LEFT COLUMN: Desktop Card + Global Specs & Buttons */}
+          <div className="flex flex-col gap-6 mt-10 lg:mt-0 lg:bg-[#4a2c1d]/85 lg:backdrop-blur-xl lg:p-10 lg:rounded-[40px] lg:shadow-2xl lg:border lg:border-white/10 lg:max-w-xl lg:mr-auto">
             
             {/* Desktop Only Text */}
             <div className="hidden lg:flex flex-col gap-6">
-              <motion.h3 {...fadeUp(0.1)} className="text-3xl md:text-5xl font-serif text-primary leading-tight">
+              <motion.h3 {...fadeUp(0.1)} className="text-3xl md:text-5xl font-serif text-background leading-tight">
                 Paciência, Pureza <br /> e Perfeição.
               </motion.h3>
-              <motion.p {...fadeUp(0.2)} className="text-base text-primary/70 font-sans font-light leading-relaxed">
+              <motion.p {...fadeUp(0.2)} className="text-base text-background/90 font-sans font-light leading-relaxed">
                 O Noble Leche é mais do que um produto — é o resultado de um processo artesanal ancestral. Leite fresco integral, açúcar de cana orgânico e horas de cozimento lento criam uma textura aveludada e um sabor que evoca o calor do campo brasileiro.
               </motion.p>
-              <motion.p {...fadeUp(0.3)} className="text-base text-primary/70 font-sans font-light leading-relaxed">
+              <motion.p {...fadeUp(0.3)} className="text-base text-background/90 font-sans font-light leading-relaxed">
                 Sem conservantes, sem atalhos. Cada pote carrega a essência pura da tradição em cada colherada.
               </motion.p>
             </div>
 
-            {/* Specs Grid (Visible Everywhere) */}
+            {/* Specs Grid */}
             <motion.div {...fadeUp(0.4)} className="grid grid-cols-2 gap-4">
               {specs.map((s, i) => (
-                <div key={i} className="bg-background/70 rounded-2xl px-6 py-5 border border-primary/10 shadow-sm">
-                  <p className="text-2xl font-serif font-bold text-primary">{s.label}</p>
-                  <p className="text-xs text-primary/50 font-sans mt-2">{s.desc}</p>
+                <div key={i} className="bg-background/70 lg:bg-white/10 lg:backdrop-blur-sm rounded-2xl px-6 py-5 border border-primary/10 lg:border-white/10 shadow-sm">
+                  <p className="text-2xl font-serif font-bold text-primary lg:text-background">{s.label}</p>
+                  <p className="text-xs text-primary/50 lg:text-background/60 font-sans mt-2">{s.desc}</p>
                 </div>
               ))}
             </motion.div>
 
-            {/* Buttons (Visible Everywhere) */}
+            {/* Buttons */}
             <motion.div {...fadeUp(0.5)} className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-2xl h-14 px-8 text-base font-bold shadow-lg transition-all duration-300">
+              <Button asChild size="lg" className="bg-primary lg:bg-[#633a28] text-white hover:bg-primary/90 lg:hover:bg-[#7a4933] rounded-2xl h-14 px-8 text-base font-bold shadow-lg transition-all duration-300">
                 <Link href="#contato">Seja um parceiro</Link>
               </Button>
-              <Button asChild variant="outline" size="default">
+              <Button asChild variant="outline" size="lg" className="rounded-2xl h-14 px-8 text-base font-bold lg:bg-[#f5e6d3] lg:text-[#4a2c1d] lg:border-none lg:hover:bg-[#e6d4bc] transition-all duration-300">
                 <Link href="#contato">Pedir amostra grátis</Link>
               </Button>
             </motion.div>
             
           </div>
+
+          {/* RIGHT SPACER: Room for the background focus */}
+          <div className="hidden lg:block h-full min-h-[600px]" />
         </div>
       </div>
     </section>

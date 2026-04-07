@@ -32,7 +32,7 @@ export default function TabelaNutricional() {
 
         <motion.div 
           {...fadeUp}
-          className="mt-16 bg-white rounded-4xl shadow-xl border border-primary/5 p-8 md:p-12"
+          className="mt-16 bg-[#faf7f2] rounded-4xl shadow-xl border border-primary/10 p-8 md:p-12"
         >
           <div className="flex flex-col md:flex-row justify-between items-end border-b-2 border-primary/20 pb-4 mb-6">
             <div>

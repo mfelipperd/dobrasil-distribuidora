@@ -146,7 +146,7 @@ export default function Receitas() {
     return () => window.removeEventListener("resize", checkViewport);
   }, []);
 
-  // Horizontal parallax for mobile (linked to container scroll)
+  // Horizontal parallax (linked to container scroll)
   const { scrollXProgress } = useScroll({ container: scrollRef });
   
   // Vertical parallax for desktop (linked to page scroll)
@@ -166,9 +166,10 @@ export default function Receitas() {
   };
 
   useEffect(() => {
-    if (!isMobile) return;
     checkScroll();
-  }, [isMobile]);
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
 
   const scrollBy = (amount: number) => {
     if (scrollRef.current) {
@@ -187,10 +188,10 @@ export default function Receitas() {
   return (
     <section ref={sectionRef} className="relative py-24 lg:py-36 bg-primary overflow-hidden" id="receitas">
       
-      {/* Background with more texture (spices, flour, seeds) for visible motion */}
+      {/* Background */}
       <motion.div 
         style={{ 
-          x: isMobile ? hBgX : "0%",
+          x: hBgX,
           y: isMobile ? "0%" : vBgY,
           scale: 1.3
         }} 
@@ -211,44 +212,62 @@ export default function Receitas() {
           <SectionHeader label="Inspiração" title="Elevando sua culinária" variant="dark" center={false} />
         </div>
 
-        {/* Side Arrows (Mobile/Scroll mode only) - Subtle design */}
+        {/* Side Arrows (Always visible when scrollable) */}
         <AnimatePresence>
-          {isMobile && (
-            <>
-              <motion.button 
-                initial={{ opacity: 0 }} animate={{ opacity: canScrollLeft ? 0.6 : 0 }}
-                onClick={() => scrollBy(-300)}
-                className="absolute left-2 top-[60%] -translate-y-1/2 z-30 p-2 text-white bg-black/20 backdrop-blur-sm rounded-full pointer-events-auto transition-opacity"
-              >
-                <ArrowLeft size={18} />
-              </motion.button>
-              <motion.button 
-                initial={{ opacity: 0 }} animate={{ opacity: canScrollRight ? 0.6 : 0 }}
-                onClick={() => scrollBy(300)}
-                className="absolute right-2 top-[60%] -translate-y-1/2 z-30 p-2 text-white bg-black/20 backdrop-blur-sm rounded-full pointer-events-auto transition-opacity"
-              >
-                <ArrowRight size={18} />
-              </motion.button>
-            </>
-          )}
+          <motion.button 
+            key="btn-prev-desktop"
+            initial={{ opacity: 0 }} animate={{ opacity: canScrollLeft ? 0.6 : 0 }}
+            onClick={() => scrollBy(-400)}
+            className="absolute left-4 lg:left-8 top-[60%] -translate-y-1/2 z-30 p-3 text-white bg-black/40 backdrop-blur-md rounded-full pointer-events-auto transition-opacity hover:opacity-100 hidden md:flex"
+            aria-label="Anterior"
+          >
+            <ArrowLeft size={24} />
+          </motion.button>
+          <motion.button 
+            key="btn-next-desktop"
+            initial={{ opacity: 0 }} animate={{ opacity: canScrollRight ? 0.6 : 0 }}
+            onClick={() => scrollBy(400)}
+            className="absolute right-4 lg:right-8 top-[60%] -translate-y-1/2 z-30 p-3 text-white bg-black/40 backdrop-blur-md rounded-full pointer-events-auto transition-opacity hover:opacity-100 hidden md:flex"
+            aria-label="Próximo"
+          >
+            <ArrowRight size={24} />
+          </motion.button>
+          <motion.button 
+            key="btn-prev-mobile"
+            initial={{ opacity: 0 }} animate={{ opacity: canScrollLeft ? 0.6 : 0 }}
+            onClick={() => scrollBy(-300)}
+            className="absolute left-2 top-[60%] -translate-y-1/2 z-30 p-2 text-white bg-black/20 backdrop-blur-sm rounded-full pointer-events-auto transition-opacity md:hidden"
+            aria-label="Anterior"
+          >
+            <ArrowLeft size={18} />
+          </motion.button>
+          <motion.button 
+            key="btn-next-mobile"
+            initial={{ opacity: 0 }} animate={{ opacity: canScrollRight ? 0.6 : 0 }}
+            onClick={() => scrollBy(300)}
+            className="absolute right-2 top-[60%] -translate-y-1/2 z-30 p-2 text-white bg-black/20 backdrop-blur-sm rounded-full pointer-events-auto transition-opacity md:hidden"
+            aria-label="Próximo"
+          >
+            <ArrowRight size={18} />
+          </motion.button>
         </AnimatePresence>
 
-        {/* Adaptive Layout: Grid on Desktop / Scroll on Mobile */}
+        {/* Horizontal Scroll Layout - Full Width */}
         <div 
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex md:grid md:grid-cols-2 lg:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory px-6 md:px-0 container mx-auto gap-6 lg:gap-10 pb-16 pt-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
+          className="flex overflow-x-auto snap-x snap-mandatory px-4 md:px-12 w-full gap-6 lg:gap-10 pb-16 pt-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
         >
           {receitas.map((receita, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true, margin: "100px" }}
-              className="shrink-0 w-[85vw] sm:w-[400px] md:w-full snap-center group bg-background rounded-4xl overflow-hidden shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500"
+              className="shrink-0 w-[85vw] sm:w-[400px] lg:w-[450px] snap-center group bg-background rounded-4xl overflow-hidden shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500"
             >
-              <div className="relative h-[250px] w-full overflow-hidden">
+              <div className="relative h-[250px] lg:h-[300px] w-full overflow-hidden">
                 <Image 
                   src={receita.img} 
                   alt={receita.nome} 
@@ -274,15 +293,15 @@ export default function Receitas() {
               </div>
             </motion.div>
           ))}
-          {/* Spacer to allow the last item to hit center on desktop */}
-          <div className="shrink-0 w-6 md:w-0" />
+          {/* Spacer to allow some travel after the last card */}
+          <div className="shrink-0 w-[5vw] lg:w-[15vw]" />
         </div>
       </div>
 
-      {/* MODAL / DIALOG - Manual implementation with Framer Motion AnimatePresence */}
+      {/* MODAL */}
       <AnimatePresence>
         {selectedReceita && (
-          <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 lg:p-12">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-12">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -302,7 +321,7 @@ export default function Receitas() {
               <button 
                 onClick={() => setSelectedReceita(null)}
                 className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 p-3 bg-background/50 backdrop-blur-md rounded-full text-primary hover:bg-white hover:text-black transition-colors"
-                aria-label="Close modal"
+                aria-label="Fechar"
               >
                 <X size={24} />
               </button>

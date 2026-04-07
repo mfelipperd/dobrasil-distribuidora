@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { useRef } from "react";
+import Image from "next/image";
 
 const features = [
   {
@@ -103,7 +104,15 @@ export default function Diferenciais() {
           {/* Subtle Graphic Element */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-white/10 transition-colors duration-700" />
           
-          <div className="max-w-2xl relative z-10 text-center lg:text-left">
+          <div className="max-w-2xl relative z-10 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div className="mb-6 relative w-48 h-20 bg-white p-4 rounded-xl shadow-sm">
+              <Image 
+                src="/images/DOBRASIL - original.png" 
+                alt="DOBRASIL Logo" 
+                fill 
+                className="object-contain object-left"
+              />
+            </div>
             <p className="text-white/50 text-[10px] font-sans font-bold uppercase tracking-[0.4em] mb-4">
               Distribuidora DO Brasil
             </p>
@@ -116,8 +125,8 @@ export default function Diferenciais() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 relative z-10 shrink-0">
-            <Button asChild size="lg" className="bg-white text-corporate hover:bg-[#E6D5B8] hover:text-primary rounded-2xl h-16 px-10 text-lg font-bold shadow-xl transition-all duration-300">
-              <Link href="#contato">Falar com Consultor</Link>
+            <Button asChild size="lg" className="bg-white text-corporate hover:bg-[#FFB800] hover:text-corporate rounded-2xl h-16 px-10 text-lg font-bold shadow-xl transition-all duration-300">
+              <Link href="https://wa.me/5591912345678" target="_blank">Falar com Consultor</Link>
             </Button>
           </div>
         </motion.div>

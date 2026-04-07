@@ -16,7 +16,6 @@ export default function ProdutoPage() {
     <main>
       <Header 
          isProductPage={true} 
-         themeClass="bg-primary/40 text-background border-white/10" 
       />
       <Hero />
       <About />

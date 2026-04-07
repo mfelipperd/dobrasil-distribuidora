@@ -30,14 +30,14 @@ export default function ProductShowcase() {
     target: containerRef,
     offset: ["start end", "end start"]
   });
-  const imageY = useTransform(deskProgress, [0, 1], [40, -40]);
+  const imageY = useTransform(deskProgress, [0, 1], [-50, 50]);
 
   // Mobile Overlays Custom Timing
-  // Starts when top of image is near top of screen (fully visible), ends very quickly so text is readable
   const { scrollYProgress: mobProgress } = useScroll({
     target: mobileRef,
     offset: ["start 30%", "start 5%"]
   });
+  const mobImageY = useTransform(mobProgress, [0, 1], [-40, 40]);
   const imageBlur = useTransform(mobProgress, [0, 1], ["blur(0px)", "blur(12px)"]);
   const overlayOpacity = useTransform(mobProgress, [0, 1], [0, 0.90]);
   const textOpacity = useTransform(mobProgress, [0, 1], [0, 1]);
@@ -46,15 +46,17 @@ export default function ProductShowcase() {
   return (
     <section id="produto" className="relative py-16 lg:py-12 bg-[#1a0f0a] overflow-hidden" ref={containerRef}>
       {/* DESKTOP BACKGROUND LAYER */}
-      <div className="hidden lg:block absolute inset-0 z-0">
-        <Image
-          src="/images/Gemini_Generated_Image_m2opfym2opfym2op.png"
-          alt="Noble Leche Background"
-          fill
-          priority
-          quality={100}
-          className="object-cover object-left scale-105"
-        />
+      <div className="hidden lg:block absolute inset-0 z-0 overflow-hidden">
+        <motion.div style={{ y: imageY }} className="absolute inset-0">
+          <Image
+            src="/images/Gemini_Generated_Image_m2opfym2opfym2op.png"
+            alt="Noble Leche Background"
+            fill
+            priority
+            quality={100}
+            className="object-cover object-left scale-125"
+          />
+        </motion.div>
         {/* Subtle overlay to ensure text readability */}
         <div className="absolute inset-0 bg-black/5" />
       </div>
@@ -69,12 +71,12 @@ export default function ProductShowcase() {
           
           {/* MOBILE EXPERIENCE: Edge-to-Edge Image + Text */}
           <div ref={mobileRef} className="relative -mx-6 w-[calc(100%+3rem)] aspect-4/5 overflow-hidden shadow-2xl lg:hidden flex flex-col justify-center">
-            <motion.div style={{ filter: imageBlur }} className="absolute inset-0 z-0">
+            <motion.div style={{ filter: imageBlur, y: mobImageY }} className="absolute inset-0 z-0">
               <Image
                 src="/images/Gemini_Generated_Image_hgrowdhgrowdhgro (1).png"
                 alt="Noble Leche — Doce de Leite Premium"
                 fill priority
-                className="object-cover"
+                className="object-cover scale-150"
               />
             </motion.div>
             

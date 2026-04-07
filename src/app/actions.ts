@@ -1,6 +1,6 @@
 "use server";
 
-const scriptUrl = process.env.GOOGLE_SHEETS_URL!;
+const scriptUrl = process.env.GOOGLE_SHEETS_URL;
 
 export async function submitContactForm(data: { 
   nome: string; 
@@ -10,8 +10,13 @@ export async function submitContactForm(data: {
   hp_field?: string;
   loadTime?: number;
 }) {
-  try {
-    // 1. Proteção Honeypot (Se preenchido, é bot)
+    if (!scriptUrl) {
+      console.error("ERRO: GOOGLE_SHEETS_URL não está definida!");
+      return { success: false, error: "Configuração do servidor incompleta." };
+    }
+
+    try {
+      // 1. Proteção Honeypot (Se preenchido, é bot)
     if (data.hp_field) {
       console.warn("Spam detectado via Honeypot.");
       return { success: true }; // Descarte silencioso (fingimos que deu certo)
@@ -50,13 +55,14 @@ export async function submitContactForm(data: {
       redirect: "follow",
     });
 
-    console.log("Status da resposta do Google:", response.status);
-
-    if (response.status === 200 || response.status === 0 || response.type === 'opaque') {
+    if (response.status === 200 || response.status === 201 || (response.status === 0 && response.type === 'opaque')) {
+      console.log("Envio realizado com sucesso!");
       return { success: true };
     }
 
-    return { success: false, error: `Status: ${response.status}` };
+    const responseBody = await response.text().catch(() => "N/A");
+    console.error(`Erro do Google Sheets: Status ${response.status}`, responseBody);
+    return { success: false, error: `Erro na API do Sheets (${response.status})` };
   } catch (error) {
     console.error("Erro Crítico no Servidor:", error);
     return { success: false, error: "Falha na conexão interna." };

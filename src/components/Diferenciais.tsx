@@ -95,22 +95,31 @@ export default function Diferenciais() {
           ))}
         </div>
 
-        {/* CTA Banner */}
+        {/* Distributor Showcase Section */}
         <motion.div
           {...fadeUp(0.35)}
-          className="mt-16 rounded-4xl bg-corporate px-12 py-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl shadow-corporate/20 border border-white/10"
+          className="mt-16 rounded-4xl bg-corporate px-8 md:px-16 py-16 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl shadow-corporate/30 border border-white/5 relative overflow-hidden group"
         >
-          <div className="max-w-xl">
-            <p className="text-white/40 text-[10px] font-sans font-bold uppercase tracking-[0.3em] mb-3">
-              Pronto para escalar?
+          {/* Subtle Graphic Element */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-white/10 transition-colors duration-700" />
+          
+          <div className="max-w-2xl relative z-10 text-center lg:text-left">
+            <p className="text-white/50 text-[10px] font-sans font-bold uppercase tracking-[0.4em] mb-4">
+              Distribuidora DO Brasil
             </p>
-            <h4 className="text-3xl md:text-4xl font-serif text-white leading-tight">
-              Solicite nosso catálogo completo e comece hoje.
+            <h4 className="text-3xl md:text-5xl font-serif text-white leading-tight mb-6">
+              Infraestrutura de ponta para o seu negócio decolar.
             </h4>
+            <p className="text-white/70 text-base md:text-lg font-sans font-light leading-relaxed max-w-xl">
+              Mais que um fornecedor, somos o seu braço logístico no Norte. Atendimento personalizado, curadoria rigorosa e entrega garantida.
+            </p>
           </div>
-          <Button asChild size="lg" className="shrink-0 bg-white text-corporate hover:bg-white/90 rounded-full h-16 px-10 text-lg shadow-xl">
-            <Link href="#contato">Solicitar catálogo</Link>
-          </Button>
+
+          <div className="flex flex-col sm:flex-row gap-4 relative z-10 shrink-0">
+            <Button asChild size="lg" className="bg-white text-corporate hover:bg-[#E6D5B8] hover:text-primary rounded-2xl h-16 px-10 text-lg font-bold shadow-xl transition-all duration-300">
+              <Link href="#contato">Falar com Consultor</Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

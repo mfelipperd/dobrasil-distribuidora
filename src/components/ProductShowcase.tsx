@@ -127,9 +127,9 @@ export default function ProductShowcase() {
             </motion.div>
 
             {/* Buttons (Visible Everywhere) */}
-            <motion.div {...fadeUp(0.5)} className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button asChild variant="default" size="default">
-                <Link href="#contato">Solicitar catálogo</Link>
+            <motion.div {...fadeUp(0.5)} className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-2xl h-14 px-8 text-base font-bold shadow-lg transition-all duration-300">
+                <Link href="#contato">Seja um parceiro</Link>
               </Button>
               <Button asChild variant="outline" size="default">
                 <Link href="#contato">Pedir amostra grátis</Link>

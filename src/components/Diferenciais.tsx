@@ -8,6 +8,7 @@ import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { useRef } from "react";
 import Image from "next/image";
+import { InfoPopover } from "./ui/InfoPopover";
 
 const features = [
   {
@@ -125,9 +126,11 @@ export default function Diferenciais() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 relative z-10 shrink-0">
-            <Button asChild size="lg" className="bg-white text-corporate hover:bg-[#FFB800] hover:text-corporate rounded-2xl h-16 px-10 text-lg font-bold shadow-xl transition-all duration-300">
-              <Link href="https://wa.me/5591912345678" target="_blank">Falar com Consultor</Link>
-            </Button>
+            <InfoPopover message="WhatsApp em atualização. Por favor, utilize o formulário de contato abaixo para falar com um consultor.">
+              <Button size="lg" className="bg-white text-corporate hover:bg-[#FFB800] hover:text-corporate rounded-2xl h-16 px-10 text-lg font-bold shadow-xl transition-all duration-300">
+                Falar com Consultor
+              </Button>
+            </InfoPopover>
           </div>
         </motion.div>
       </div>

@@ -51,7 +51,7 @@ export default function MaintenancePage() {
               <Link href="#contato">Seja um fornecedor</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-12">
-              <Link href="/produto">Conheça nossos produtos</Link>
+              <Link href="/doce-de-leite">Conheça nossos produtos</Link>
             </Button>
           </div>
         </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Instagram, Linkedin, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { InfoPopover } from "./ui/InfoPopover";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,7 +12,11 @@ import { useState } from "react";
 import { submitContactForm } from "@/app/actions";
 
 const contactItems = [
-  { icon: <Phone size={17} />, text: "+55 91 91234-5678" },
+  { 
+    icon: <Phone size={17} />, 
+    text: "+55 91 91234-5678",
+    popover: "WhatsApp em atualização. Por favor, utilize o formulário ao lado para falar com um consultor."
+  },
   { icon: <Mail size={17} />, text: "contato@dobrasil.com.br" },
   { icon: <MapPin size={17} />, text: "Belém, PA — Brasil" },
 ];
@@ -75,19 +80,34 @@ export default function Contato() {
             <div className="flex flex-col gap-6 mb-12">
               {contactItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-5 text-background/70 group">
-                  <div className="text-background/50 shrink-0 w-10 h-10 flex items-center justify-center bg-background/10 rounded-full group-hover:bg-background/20 transition-colors">{item.icon}</div>
-                  <span className="font-sans text-base">{item.text}</span>
+                  {item.popover ? (
+                    <InfoPopover message={item.popover} className="w-full">
+                      <div className="flex items-center gap-5 cursor-pointer">
+                        <div className="text-background/50 shrink-0 w-10 h-10 flex items-center justify-center bg-background/10 rounded-full group-hover:bg-background/20 transition-colors">{item.icon}</div>
+                        <span className="font-sans text-base">{item.text}</span>
+                      </div>
+                    </InfoPopover>
+                  ) : (
+                    <>
+                      <div className="text-background/50 shrink-0 w-10 h-10 flex items-center justify-center bg-background/10 rounded-full group-hover:bg-background/20 transition-colors">{item.icon}</div>
+                      <span className="font-sans text-base">{item.text}</span>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
 
             <div className="flex gap-4">
-              <a href="#" aria-label="Instagram" className="p-3 rounded-full bg-background/10 text-background/60 hover:bg-background/20 hover:text-background transition-all duration-300">
-                <Instagram size={20} />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="p-3 rounded-full bg-background/10 text-background/60 hover:bg-background/20 hover:text-background transition-all duration-300">
-                <Linkedin size={20} />
-              </a>
+              <InfoPopover message="Instagram em atualização. Em breve disponibilizaremos nosso feed exclusivo.">
+                <div aria-label="Instagram" className="p-3 rounded-full bg-background/10 text-background/60 hover:bg-background/20 hover:text-background transition-all duration-300 cursor-pointer">
+                  <Instagram size={20} />
+                </div>
+              </InfoPopover>
+              <InfoPopover message="LinkedIn em atualização. Siga-nos em breve para novidades corporativas.">
+                <div aria-label="LinkedIn" className="p-3 rounded-full bg-background/10 text-background/60 hover:bg-background/20 hover:text-background transition-all duration-300 cursor-pointer">
+                  <Linkedin size={20} />
+                </div>
+              </InfoPopover>
             </div>
           </motion.div>
 

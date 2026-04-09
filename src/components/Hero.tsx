@@ -4,12 +4,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 
 export default function Hero() {
   const containerRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoSrc, setVideoSrc] = useState("/videos/hero-doce-de-leite.mp4");
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -20,32 +19,21 @@ export default function Hero() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
-  // Efeito para gerenciar vídeo responsivo e garantir autoplay
+  // Efeito para garantir o autoplay
   useEffect(() => {
-    // Define o vídeo correto baseado no tamanho da tela no lado do cliente
-    if (window.innerWidth < 768) {
-      setVideoSrc("/videos/hero-vertical.mp4");
-    }
-
     if (videoRef.current) {
-      // Pequeno delay para garantir que o src foi processado pelo browser
-      const timer = setTimeout(() => {
-        videoRef.current?.play().catch(err => {
-          console.warn("Autoplay bloqueado pelo navegador:", err);
-        });
-      }, 100);
-      return () => clearTimeout(timer);
+      videoRef.current.play().catch(err => {
+        console.warn("Autoplay bloqueado pelo navegador:", err);
+      });
     }
-  }, [videoSrc]);
+  }, []);
 
   return (
     <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 h-[130%] -top-[15%]">
         <video
-          key={videoSrc}
           ref={videoRef}
-          src={videoSrc}
           autoPlay
           muted
           loop
@@ -55,7 +43,9 @@ export default function Hero() {
           // @ts-ignore fetchPriority is supported in React 19
           fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
-        />
+        >
+          <source src="/videos/hero-doce-de-leite.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-primary/40" />
       </motion.div>
 

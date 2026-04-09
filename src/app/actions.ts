@@ -23,36 +23,28 @@ export async function submitContactForm(data: {
     }
 
     try {
-      console.log(`Recebido formulário de: ${data.email}. Validando...`);
       
       // 1. Proteção Honeypot (Se preenchido, é bot)
     if (data.hp_field) {
-      console.warn("Spam detectado via Honeypot.");
       return { success: true }; // Descarte silencioso (fingimos que deu certo)
     }
 
     // 2. Proteção de Tempo (Preenchido em menos de 3 segundos? Provável bot)
     const timeTaken = Date.now() - (data.loadTime || 0);
-    console.log(`Tempo para preenchimento: ${timeTaken}ms`);
     
     if (timeTaken < 3000) {
-      console.warn(`Envio suspeito rápido demais (${timeTaken}ms).`);
       return { success: false, error: "Envio muito rápido. Tente novamente em alguns segundos." };
     }
 
     // 3. Validação Básica de Dados
     if (!data.email.includes("@") || data.mensagem.length < 5) {
-      console.warn("Dados inválidos (email ou mensagem curta).");
       return { success: false, error: "Dados inválidos." };
     }
 
     if (data.mensagem.length > 5000) {
-      console.warn("Mensagem excessivamente longa.");
       return { success: false, error: "Mensagem muito longa." };
     }
 
-    console.log(`Iniciando fetch para Google Sheets URL (${scriptUrl.substring(0, 30)}...)`);
-    
     // Usando text/plain para evitar problemas de pré-vôo (preflight) do CORS
     const response = await fetch(scriptUrl, {
       method: "POST",
@@ -68,10 +60,7 @@ export async function submitContactForm(data: {
       redirect: "follow",
     });
 
-    console.log(`Resposta do Sheets status: ${response.status}`);
-
     if (response.status === 200 || response.status === 201 || (response.status === 0 && response.type === 'opaque')) {
-      console.log("Envio realizado com sucesso!");
       return { success: true };
     }
 

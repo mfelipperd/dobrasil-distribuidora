@@ -201,6 +201,9 @@ export default function Receitas() {
           src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=2000&q=80" 
           alt="Spices and ingredients background" 
           fill 
+          loading="lazy"
+          sizes="100vw"
+          quality={60}
           className="object-cover opacity-30 grayscale brightness-75 transition-all"
         />
         <div className="absolute inset-0 bg-linear-to-b from-primary via-transparent to-primary" />

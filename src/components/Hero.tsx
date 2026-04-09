@@ -23,6 +23,10 @@ export default function Hero() {
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 h-[130%] -top-[15%]">
         <video
           autoPlay muted loop playsInline
+          preload="auto"
+          poster="/images/hero-poster.jpg"
+          // @ts-ignore fetchPriority is supported in React 19
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero-doce-de-leite.mp4" type="video/mp4" />

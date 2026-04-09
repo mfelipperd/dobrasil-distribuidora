@@ -52,8 +52,9 @@ export default function ProductShowcase() {
             src="/images/Gemini_Generated_Image_m2opfym2opfym2op.png"
             alt="Noble Leche Background"
             fill
-            priority
-            quality={100}
+            loading="lazy"
+            quality={80}
+            sizes="100vw"
             className="object-cover object-left scale-125"
           />
         </motion.div>
@@ -75,7 +76,10 @@ export default function ProductShowcase() {
               <Image
                 src="/images/Gemini_Generated_Image_hgrowdhgrowdhgro (1).png"
                 alt="Noble Leche — Doce de Leite Premium"
-                fill priority
+                fill
+                loading="lazy"
+                quality={80}
+                sizes="100vw"
                 className="object-cover scale-150"
               />
             </motion.div>

@@ -25,6 +25,20 @@ export default function Contato() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [loadTime] = useState(Date.now()); // Para cálculo de tempo de preenchimento
 
+  // Helper para preenchimento de teste solicitado pelo usuário
+  if (typeof window !== "undefined") {
+    (window as any).fillTestForm = () => {
+      const form = document.querySelector("#contato-form") as HTMLFormElement;
+      if (form) {
+        (form.querySelector('input[name="nome"]') as HTMLInputElement).value = "Teste Distribuidora";
+        (form.querySelector('input[name="empresa"]') as HTMLInputElement).value = "DO Brasil Logística";
+        (form.querySelector('input[name="email"]') as HTMLInputElement).value = "test@dobrasilgroup.com.br";
+        (form.querySelector('textarea[name="mensagem"]') as HTMLTextAreaElement).value = "Esta é uma mensagem de teste automatizada para validar a integração com o Google Sheets em produção.";
+        console.log("Formulário preenchido com dados de teste. Aguarde 3 segundos antes de enviar.");
+      }
+    };
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
@@ -144,7 +158,7 @@ export default function Contato() {
                 ) : (
                   <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                     <h3 className="text-xl font-serif text-background mb-7">Envie uma mensagem</h3>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                    <form id="contato-form" onSubmit={handleSubmit} className="flex flex-col gap-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <FormField label="Nome" name="nome" placeholder="Seu nome" type="text" required />
                         <FormField label="Empresa" name="empresa" placeholder="Nome da empresa" type="text" required />

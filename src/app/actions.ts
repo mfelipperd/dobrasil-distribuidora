@@ -1,6 +1,8 @@
 "use server";
 
-const scriptUrl = process.env.GOOGLE_SHEETS_URL;
+const rawScriptUrl = process.env.GOOGLE_SHEETS_URL;
+// Limpa a URL de possíveis aspas ou espaços extras que podem vir do ambiente do Vercel
+const scriptUrl = rawScriptUrl?.trim().replace(/^["'](.*)["']$/, '$1');
 
 export async function submitContactForm(data: { 
   nome: string; 
@@ -13,6 +15,11 @@ export async function submitContactForm(data: {
     if (!scriptUrl) {
       console.error("ERRO: GOOGLE_SHEETS_URL não está definida no ambiente!");
       return { success: false, error: "Configuração do servidor incompleta. (Env Var ausente)" };
+    }
+
+    if (!scriptUrl.startsWith("http")) {
+      console.error(`ERRO: GOOGLE_SHEETS_URL inválida: "${scriptUrl}"`);
+      return { success: false, error: "URL de destino inválida." };
     }
 
     try {

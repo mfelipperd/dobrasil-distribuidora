@@ -40,17 +40,21 @@ export default function Contato() {
     };
 
     try {
+      console.log("Tentando enviar formulário com os dados:", { ...data, hp_field: "[HIDDEN]" });
       const response = await submitContactForm(data);
+      console.log("Resposta do servidor:", response);
 
       if (response.success) {
+        console.log("Formulário enviado com sucesso!");
         setStatus("success");
         (e.target as HTMLFormElement).reset();
         setTimeout(() => setStatus("idle"), 5000);
       } else {
+        console.error("Falha ao enviar formulário:", response.error);
         setStatus("error");
       }
     } catch (error) {
-      console.error("Erro ao enviar:", error);
+      console.error("Erro inesperado ao enviar:", error);
       setStatus("error");
     }
   };

@@ -4,12 +4,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function Hero() {
-  const ref = useRef(null);
+  const containerRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: containerRef,
     offset: ["start start", "end start"],
   });
 
@@ -17,11 +19,22 @@ export default function Hero() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
+  // Efeito para garantir o autoplay em dispositivos móveis e gerenciar vídeo responsivo
+  useEffect(() => {
+    if (videoRef.current) {
+      // Tenta dar play explicitamente para contornar bloqueios de autoplay mobile
+      videoRef.current.play().catch(err => {
+        console.warn("Autoplay bloqueado pelo navegador:", err);
+      });
+    }
+  }, []);
+
   return (
-    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 h-[130%] -top-[15%]">
         <video
+          ref={videoRef}
           autoPlay muted loop playsInline
           preload="auto"
           poster="/images/hero-poster.jpg"
@@ -29,7 +42,17 @@ export default function Hero() {
           fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero-doce-de-leite.mp4" type="video/mp4" />
+          {/* Desktop Video */}
+          <source 
+            src="/videos/hero-doce-de-leite.mp4" 
+            type="video/mp4" 
+            media="(min-width: 768px)" 
+          />
+          {/* Mobile Video (Vertical) */}
+          <source 
+            src="/videos/hero-vertical.mp4" 
+            type="video/mp4" 
+          />
         </video>
         <div className="absolute inset-0 bg-primary/40" />
       </motion.div>

@@ -14,26 +14,26 @@ const features = [
   {
     icon: Truck,
     title: "Logística Local",
-    subtitle: "Belém / PA",
-    desc: "Hub de distribuição dedicado no Norte garante seus pedidos sempre frescos e no prazo.",
+    subtitle: "São Luís / MA",
+    desc: "Hub de distribuição localizado em São Luís-MA, garante seus pedidos sempre no prazo estabelecido.",
   },
   {
     icon: Sparkles,
-    title: "Curadoria Artesanal",
-    subtitle: "Seleção rigorosa",
-    desc: "Cada produtor passa por critérios exigentes, garantindo padrão premium em todos os lotes.",
+    title: "Curadoria Rigorosa",
+    subtitle: "Seleção Rigorosa",
+    desc: "A Curadoria de cada produto passa por critérios exigentes, como por exemplo: capacidade de produção, logística e degustação. Garantindo a viabilidade de negociação com os nossos clientes.",
   },
   {
     icon: HandshakeIcon,
     title: "Programa de Parcerias",
     subtitle: "Cresça com a DO Brasil",
-    desc: "Soluções B2B personalizadas, materiais de PDV e preços competitivos para atacado.",
+    desc: "Soluções B2B personalizadas, materiais de PDV e preços competitivos para o varejo.",
   },
   {
     icon: ShieldCheck,
-    title: "Qualidade Garantida",
-    subtitle: "Sem conservantes",
-    desc: "Produtos 100% naturais, rastreáveis do produtor até a sua mesa.",
+    title: "Qualidade na Origem",
+    subtitle: "Qualidade Garantida",
+    desc: "Trabalhamos com alimentos de qualidade garantida desde a origem do produtor até a sua mesa.",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function Diferenciais() {
               Infraestrutura de ponta para o seu negócio decolar.
             </h4>
             <p className="text-white/70 text-base md:text-lg font-sans font-light leading-relaxed max-w-xl">
-              Mais que um fornecedor, somos o seu braço logístico no Norte. Atendimento personalizado, curadoria rigorosa e entrega garantida.
+              Mais que um fornecedor, somos o seu braço logístico no Maranhão. Atendimento personalizado, curadoria rigorosa e entrega garantida.
             </p>
           </div>
 

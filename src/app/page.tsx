@@ -60,7 +60,7 @@ export default function UnderConstruction() {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="text-base md:text-lg text-gray-400 font-light mb-10 leading-relaxed max-w-lg"
             >
-              Estamos construindo uma plataforma completa para logística e curadoria de alimentos premium. O futuro da distribuição brasileira começa aqui.
+              Estamos construindo uma plataforma completa para curadoria, distribuição e logística de alimentos premium de origem brasileira. O futuro da distribuição brasileira começa aqui.
             </motion.p>
 
             <motion.div 
@@ -106,7 +106,7 @@ export default function UnderConstruction() {
                   </h3>
                   
                   <p className="text-sm text-white/70 font-light mb-8 max-w-xs leading-relaxed">
-                    Explore o doce de leite que está redefinindo o padrão de excelência artesanal no Brasil.
+                    Explore o doce de leite que está redefinindo o padrão de excelência no Brasil.
                   </p>
 
                   <Button asChild size="lg" className="bg-white text-[#1D447E] hover:bg-[#FFB800] hover:text-white rounded-full px-10 h-14 text-base font-black shadow-2xl transition-all duration-300 group">
@@ -127,7 +127,7 @@ export default function UnderConstruction() {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-gray-300">
            <p>DO BRASIL DISTRIBUIDORA &copy; {new Date().getFullYear()}</p>
            <div className="flex items-center gap-4 text-gray-400">
-              <span>Belém</span>
+              <span>São Luís / MA</span>
               <div className="w-1 h-1 bg-[#FFB800] rounded-full" />
               <span>São Paulo</span>
               <div className="w-1 h-1 bg-[#1D447E] rounded-full" />

@@ -37,13 +37,13 @@ export default function RootLayout({
     "image": "https://dobrasil.com.br/images/noble-leche-jar.png",
     "@id": "https://dobrasil.com.br",
     "url": "https://dobrasil.com.br",
-    "telephone": "+5591999999999",
+    "telephone": "+559888388810",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Belém",
-      "addressLocality": "Belém",
-      "addressRegion": "PA",
-      "postalCode": "66000-000",
+      "streetAddress": "São Luís",
+      "addressLocality": "São Luís",
+      "addressRegion": "MA",
+      "postalCode": "65000-000",
       "addressCountry": "BR"
     },
     "openingHoursSpecification": {

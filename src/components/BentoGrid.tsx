@@ -8,22 +8,22 @@ import { Card } from "@/components/ui/card";
 const b2bItems = [
   {
     title: "Logística Local",
-    subtitle: "Belém / PA",
-    description: "Nosso centro de distribuição no Norte garante que seu estoque esteja sempre fresco e entregue no prazo.",
+    subtitle: "São Luís / MA",
+    description: "Nosso centro de distribuição localizado em São Luís-MA garante que seu estoque esteja sempre abastecido e entregue no prazo estabelecido.",
     icon: <MapPin className="text-accent" size={32} />,
     size: "md:col-span-1",
   },
   {
-    title: "Curadoria Artesanal",
-    subtitle: "Seleção de Alto Padrão",
-    description: "Cada produtor em nossa rede segue critérios artesanais rigorosos, garantindo um padrão premium constante.",
+    title: "Curadoria Rigorosa",
+    subtitle: "Seleção Rigorosa",
+    description: "A curadoria de cada produto passa por critérios exigentes, como por exemplo: capacidade de produção, logística e degustação. Garantindo a viabilidade de negociação com os nossos clientes.",
     icon: <Sparkles className="text-primary" size={32} />,
     size: "md:col-span-1",
   },
   {
     title: "Programa de Parceria",
     subtitle: "Cresça com a DO Brasil",
-    description: "Oferecemos soluções B2B personalizadas, materiais de PDV e preços de atacado competitivos para varejistas, hotéis e chefs.",
+    description: "Oferecemos soluções B2B personalizadas, materiais de PDV e preços competitivos para o varejo, hotéis e cafeterias.",
     icon: <HandshakeIcon className="text-accent" size={32} />,
     size: "md:col-span-1 lg:col-span-2",
   },

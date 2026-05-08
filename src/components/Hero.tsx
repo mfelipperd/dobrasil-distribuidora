@@ -59,21 +59,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-xs font-sans font-bold uppercase tracking-[0.25em] text-background/70 mb-10"
         >
-          Distribuidora Premium — Belém, PA
+          DISTRIBUIDORA PREMIUM - SÃO LUÍS-MA
         </motion.p>
         <motion.h1
           initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.25 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif text-background mb-10 tracking-tight leading-[1.1]"
         >
-          O Ouro da <br /> Tradição Brasileira.
+          O OURO DA <br /> TRADIÇÃO URUGUAIA🇺🇾.
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="text-lg md:text-xl text-background/80 font-sans font-light tracking-wide mb-12 max-w-2xl mx-auto"
         >
-          Noble Leche — Doce de Leite Premium para distribuidores exigentes.
+          Noble Leche — Doce de Leite Premium para clientes e consumidores exigentes.
         </motion.p>
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}

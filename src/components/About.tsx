@@ -9,9 +9,9 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { useRef } from "react";
 
 const values = [
-  { icon: <MapPin size={22} />, label: "Origem Garantida", desc: "Produtores selecionados da região Norte do Brasil." },
-  { icon: <Award size={22} />, label: "Qualidade Premium", desc: "Cada lote passa por rigoroso controle de qualidade artesanal." },
-  { icon: <Leaf size={22} />, label: "Sem Conservantes", desc: "Ingredientes naturais, processo lento e tradicional." },
+  { icon: <MapPin size={22} />, label: "Origem Garantida", desc: "Produtores selecionados no extremo sul do Brasil." },
+  { icon: <Award size={22} />, label: "Qualidade Premium", desc: "Cada lote passa por um rigoroso controle de qualidade , garantindo a tradição da receita original." },
+  { icon: <Leaf size={22} />, label: "Matéria Prima", desc: "Ingredientes de origem dos pastos uruguaios, que passam por um processo lento e tradicional, garantindo um produto de excelência." },
 ];
 
 const fadeUp = (i: number) => ({
@@ -48,10 +48,10 @@ export default function About() {
               center={false}
             />
             <motion.p {...fadeUp(2)} className="text-base text-primary/70 font-sans font-light leading-relaxed mb-8">
-              A DO Brasil é uma distribuidora Premium localizada em Belém do Pará, dedicada a levar o melhor da culinária artesanal brasileira para restaurantes, hotéis, cafeterias e varejistas exigentes.
+              A DO Brasil é uma distribuidora de alimentos localizada em São Luís-MA. O nosso foco está em buscar os melhores produtos para o atacado e varejo, considerando não só as tendências de consumo, mas principalmente a qualidade dos produtos. Somos especialistas em levar os melhores produtos do Brasil para restaurantes, hotéis, cafeterias e varejistas exigentes.
             </motion.p>
             <motion.p {...fadeUp(3)} className="text-base text-primary/70 font-sans font-light leading-relaxed mb-10">
-              Nosso trabalho começa na seleção cuidadosa de produtores que compartilham da mesma obsessão por qualidade. Somos o elo entre a tradição e os melhores estabelecimentos da região.
+              Nosso trabalho começa na seleção cuidadosa de produtores que compartilham da mesma paixão por qualidade. Assim, nos tornamos o elo entre a tradição e qualidade dos nossos produtos e os melhores estabelecimentos da região.
             </motion.p>
             <motion.div {...fadeUp(4)}>
               <Button asChild variant="outline">

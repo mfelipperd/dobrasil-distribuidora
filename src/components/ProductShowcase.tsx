@@ -15,10 +15,10 @@ const fadeUp = (delay = 0) => ({
 });
 
 const specs = [
-  { label: "350g", desc: "Peso líquido por pote" },
-  { label: "100%", desc: "Ingredientes naturais" },
-  { label: "Slow Cook", desc: "Processo artesanal" },
-  { label: "PA", desc: "Origem Belém do Pará" },
+  { label: "400g", desc: "Peso líquido por pote" },
+  { label: "100%", desc: "Ingredientes selecionados" },
+  { label: "Slow Cook", desc: "Processo artesanal e lento" },
+  { label: "RS", desc: "Diretamente da fronteira do Uruguai" },
 ];
 
 export default function ProductShowcase() {
@@ -98,10 +98,10 @@ export default function ProductShowcase() {
                 Paciência, Pureza <br /> e Perfeição.
               </h3>
               <p className="text-sm sm:text-base font-medium text-background/95 leading-relaxed drop-shadow-sm">
-                O Noble Leche é mais do que um produto — é o resultado de um processo artesanal ancestral. Leite fresco integral, açúcar de cana orgânico e horas de cozimento lento criam uma textura aveludada e um sabor que evoca o calor do campo brasileiro.
+                O Noble Leche é mais que um produto — é o resultado de um processo artesanal e cuidadoso. Feito com leite fresco integral, pouca adição de açúcar e horas de cozimento lento, criam uma textura aveludada e um sabor que carrega a qualidade dos campos do Sul, além de uma cor de caramelo brilhante e bastante atrativa.
               </p>
               <p className="text-sm sm:text-base font-medium text-background/95 leading-relaxed drop-shadow-sm">
-                Sem conservantes, sem atalhos. Cada pote carrega a essência pura da tradição em cada colherada.
+                Sem pressa, sem atalhos, cada pote carrega a essência pura da tradição sul-uruguaia em cada lote fabricado.
               </p>
             </motion.div>
           </div>
@@ -115,10 +115,10 @@ export default function ProductShowcase() {
                 Paciência, Pureza <br /> e Perfeição.
               </motion.h3>
               <motion.p {...fadeUp(0.2)} className="text-base text-background/90 font-sans font-light leading-relaxed">
-                O Noble Leche é mais do que um produto — é o resultado de um processo artesanal ancestral. Leite fresco integral, açúcar de cana orgânico e horas de cozimento lento criam uma textura aveludada e um sabor que evoca o calor do campo brasileiro.
+                O Noble Leche é mais que um produto — é o resultado de um processo artesanal e cuidadoso. Feito com leite fresco integral, pouca adição de açúcar e horas de cozimento lento, criam uma textura aveludada e um sabor que carrega a qualidade dos campos do Sul, além de uma cor de caramelo brilhante e bastante atrativa.
               </motion.p>
               <motion.p {...fadeUp(0.3)} className="text-base text-background/90 font-sans font-light leading-relaxed">
-                Sem conservantes, sem atalhos. Cada pote carrega a essência pura da tradição em cada colherada.
+                Sem pressa, sem atalhos, cada pote carrega a essência pura da tradição sul-uruguaia em cada lote fabricado.
               </motion.p>
             </div>
 

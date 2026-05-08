@@ -14,11 +14,11 @@ import { submitContactForm } from "@/app/actions";
 const contactItems = [
   { 
     icon: <Phone size={17} />, 
-    text: "+55 91 91234-5678",
+    text: "+55 98 8838-8810",
     popover: "WhatsApp em atualização. Por favor, utilize o formulário ao lado para falar com um consultor."
   },
   { icon: <Mail size={17} />, text: "contato@dobrasil.com.br" },
-  { icon: <MapPin size={17} />, text: "Belém, PA — Brasil" },
+  { icon: <MapPin size={17} />, text: "São Luís, MA — Brasil" },
 ];
 
 export default function Contato() {

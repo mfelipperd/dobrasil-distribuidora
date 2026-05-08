@@ -10,20 +10,20 @@ const testimonials = [
   {
     quote: "O Noble Leche transformou o cardápio do nosso café. Os clientes sempre perguntam de onde vem esse doce de leite.",
     author: "Ana Rodrigues",
-    role: "Proprietária, Café Sabores do Norte",
-    city: "Belém, PA",
+    role: "Proprietária, Café Sabores do Maranhão",
+    city: "São Luís, MA",
   },
   {
     quote: "Parceria séria, entrega no prazo e qualidade impecável. Recomendo para qualquer estabelecimento premium.",
     author: "Carlos Mendes",
-    role: "Chef Executivo, Hotel Gran Pará",
-    city: "Belém, PA",
+    role: "Chef Executivo, Hotel Central São Luís",
+    city: "São Luís, MA",
   },
   {
     quote: "Trabalhamos com vários distribuidores, mas a curadoria da DO Brasil é sem comparação. Produto artesanal de verdade.",
     author: "Fernanda Costa",
     role: "Gerente de Compras, Rede Savana Gourmet",
-    city: "Ananindeua, PA",
+    city: "Imperatriz, MA",
   },
 ];
 

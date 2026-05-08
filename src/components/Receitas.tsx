@@ -22,7 +22,7 @@ const receitas: Receita[] = [
     desc: "Massa quebradiça amendoada recheada com uma camada generosa de nosso doce de leite e coberta com chocolate belga.",
     tempo: "45 min",
     dificuldade: "Média",
-    img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=800&q=80",
     ingredientes: [
       "200g de manteiga sem sal amolecida",
       "150g de açúcar refinado",
@@ -45,7 +45,7 @@ const receitas: Receita[] = [
     desc: "A clássica massa espanhola frita até a crocância perfeita, servida com bowls aquecidos de Noble Leche.",
     tempo: "30 min",
     dificuldade: "Fácil",
-    img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1624371414361-e6e229a130f1?w=800&q=80",
     ingredientes: [
       "250ml de água",
       "50g de manteiga",
@@ -68,7 +68,7 @@ const receitas: Receita[] = [
     desc: "Uma reinterpretação andina da famosa sobremesa, mesclando queijo cremoso suave com a textura espessa do nosso doce.",
     tempo: "2 hrs",
     dificuldade: "Avançado",
-    img: "https://images.unsplash.com/photo-1524351111603-9d0442379edb?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&q=80",
     ingredientes: [
       "200g de biscoitos maisena ou maria triturados",
       "100g de manteiga derretida",
@@ -78,7 +78,7 @@ const receitas: Receita[] = [
       "400g de Noble Leche (200g para massa, 200g para cobertura)"
     ],
     preparo: [
-      "Misture os cookies triturados com a manteiga. Forre uma assadeira.",
+      "Misture os cookies triturados with a manteiga. Forre uma assadeira.",
       "Bata o cream cheese, adicione a baunilha, os ovos e metade do Noble Leche.",
       "Despeje sobre a base e asse a 160°C em banho-maria por 50 min.",
       "Desligue o forno e deixe esfriar internamente para evitar rachaduras.",
@@ -90,7 +90,7 @@ const receitas: Receita[] = [
     desc: "Um brownie denso de chocolate amargo, com um coração derretido de doce de leite artesanal em alta temperatura.",
     tempo: "50 min",
     dificuldade: "Média",
-    img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=80",
     ingredientes: [
       "200g de chocolate 70% cacau",
       "150g de manteiga",
@@ -112,7 +112,7 @@ const receitas: Receita[] = [
     desc: "Camadas super crocantes de massa folhada intercaladas com Noble Leche, finalizadas com açúcar de confeiteiro.",
     tempo: "40 min",
     dificuldade: "Avançado",
-    img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1511018556340-d16986a1c194?w=800&q=80",
     ingredientes: [
       "1 rolo de massa folhada fresca",
       "500g de Noble Leche",

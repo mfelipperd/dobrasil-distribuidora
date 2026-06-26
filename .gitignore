@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# documento de entrega (contem credenciais, nunca versionar)
+ENTREGA-CLIENTE.md

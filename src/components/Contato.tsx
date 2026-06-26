@@ -17,7 +17,7 @@ const contactItems = [
     text: "+55 98 8838-8810",
     popover: "WhatsApp em atualização. Por favor, utilize o formulário ao lado para falar com um consultor."
   },
-  { icon: <Mail size={17} />, text: "contato@dobrasil.com.br" },
+  { icon: <Mail size={17} />, text: "contato@dobrasilgroup.com.br" },
   { icon: <MapPin size={17} />, text: "São Luís, MA — Brasil" },
 ];
 

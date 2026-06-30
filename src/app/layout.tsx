@@ -37,7 +37,7 @@ export default function RootLayout({
     "image": "https://dobrasil.com.br/images/noble-leche-jar.png",
     "@id": "https://dobrasil.com.br",
     "url": "https://dobrasil.com.br",
-    "telephone": "+559888388810",
+    "telephone": "+559891897797",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "São Luís",

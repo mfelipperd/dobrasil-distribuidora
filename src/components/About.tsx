@@ -9,9 +9,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { useRef } from "react";
 
 const values = [
-  { icon: <MapPin size={22} />, label: "Origem Garantida", desc: "Produtores selecionados no extremo sul do Brasil." },
-  { icon: <Award size={22} />, label: "Qualidade Premium", desc: "Cada lote passa por um rigoroso controle de qualidade , garantindo a tradição da receita original." },
-  { icon: <Leaf size={22} />, label: "Matéria Prima", desc: "Ingredientes de origem dos pastos uruguaios, que passam por um processo lento e tradicional, garantindo um produto de excelência." },
+  { icon: <MapPin size={22} />, label: "Origem Garantida", desc: "Trabalhamos com produtores cuidadosamente selecionados em todo o Brasil." },
+  { icon: <Award size={22} />, label: "Qualidade Premium", desc: "Cada produto é escolhido para entregar confiança, qualidade e bons resultados." },
 ];
 
 const fadeUp = (i: number) => ({
@@ -43,7 +42,7 @@ export default function About() {
           {/* Text */}
           <div>
             <SectionHeader
-              label="Sobre a DO Brasil"
+              label="Sobre a Dobrasil"
               title="Nascemos do coração<br/>do Brasil para o mundo."
               center={false}
             />

@@ -14,7 +14,7 @@ import { submitContactForm } from "@/app/actions";
 const contactItems = [
   { 
     icon: <Phone size={17} />, 
-    text: "+55 98 8838-8810",
+    text: "+55 98 9189-7797",
     popover: "WhatsApp em atualização. Por favor, utilize o formulário ao lado para falar com um consultor."
   },
   { icon: <Mail size={17} />, text: "contato@dobrasilgroup.com.br" },
@@ -87,7 +87,7 @@ export default function Contato() {
               center={false}
             />
             <p className="text-base text-background/60 font-sans font-light leading-relaxed mb-12 max-w-lg">
-              Inicie sua parceria premium e receba atendimento personalizado de nossa equipe de consultoria logística. Respondemos em até 24 horas.
+              Inicie sua parceria premium e receba atendimento personalizado da nossa equipe de consultoria comercial. Respondemos em até 24 horas.
             </p>
 
             <div className="flex flex-col gap-6 mb-12">

@@ -43,7 +43,7 @@ export default function Footer() {
             <InfoPopover message="WhatsApp em atualização. Por favor, utilize o formulário de contato ao lado para falar com um consultor.">
               <div className="flex items-center gap-3 hover:text-primary/60 transition-colors cursor-pointer">
                 <Phone size={16} className="text-primary/40" />
-                +55 98 8838-8810
+                +55 98 9189-7797
               </div>
             </InfoPopover>
             <a href="mailto:contato@dobrasilgroup.com.br" className="flex items-center gap-3 hover:text-primary/60 transition-colors">
@@ -52,7 +52,7 @@ export default function Footer() {
             </a>
             <div className="flex items-start gap-3">
               <MapPin size={16} className="text-primary/40 mt-1" />
-              <span>São Luís, Maranhão — Brasil<br /><span className="text-xs opacity-50">Logística em todo território nacional</span></span>
+              <span>São Luís, Maranhão — Brasil<br /><span className="text-xs opacity-50">Parceria logística em todo território nacional</span></span>
             </div>
           </div>
         </div>

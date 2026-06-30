@@ -15,7 +15,7 @@ const features = [
     icon: Truck,
     title: "Logística Local",
     subtitle: "São Luís / MA",
-    desc: "Hub de distribuição localizado em São Luís-MA, garante seus pedidos sempre no prazo estabelecido.",
+    desc: "Hub localizado em SLZ, com frota própria, garante os seus pedidos sempre no prazo estabelecido. *Consulte condições de entrega para outras localidades.",
   },
   {
     icon: Sparkles,
@@ -26,14 +26,14 @@ const features = [
   {
     icon: HandshakeIcon,
     title: "Programa de Parcerias",
-    subtitle: "Cresça com a DO Brasil",
+    subtitle: "Cresça com a Dobrasil",
     desc: "Soluções B2B personalizadas, materiais de PDV e preços competitivos para o varejo.",
   },
   {
     icon: ShieldCheck,
     title: "Qualidade na Origem",
     subtitle: "Qualidade Garantida",
-    desc: "Trabalhamos com alimentos de qualidade garantida desde a origem do produtor até a sua mesa.",
+    desc: "Trabalhamos com alimentos de qualidade garantida desde a origem do produtor até o cliente final.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function Diferenciais() {
     <section id="diferenciais" className="py-16 lg:py-36 bg-white/50">
       <div className="container mx-auto px-6">
         <SectionHeader
-          label="Por que DO Brasil?"
+          label="Por que Dobrasil?"
           title="Diferenciais que elevam<br/>o seu negócio."
         />
 

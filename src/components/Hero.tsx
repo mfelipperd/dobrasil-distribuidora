@@ -66,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.25 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif text-background mb-10 tracking-tight leading-[1.1]"
         >
-          O OURO DA <br /> TRADIÇÃO URUGUAIA🇺🇾.
+          O OURO DA <br /> TRADIÇÃO URUGUAIA🇺🇾
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}

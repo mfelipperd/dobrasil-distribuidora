@@ -22,16 +22,22 @@ export default function Hero() {
   // Efeito para garantir o autoplay
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(err => {
+      videoRef.current.play().catch((err) => {
         console.warn("Autoplay bloqueado pelo navegador:", err);
       });
     }
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Video Background */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 h-[130%] -top-[15%]">
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute inset-0 z-0 h-[130%] -top-[15%]"
+      >
         <video
           ref={videoRef}
           autoPlay
@@ -40,7 +46,7 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/images/hero-poster.jpg"
-          // @ts-ignore fetchPriority is supported in React 19
+          // @ts-expect-error fetchPriority is supported in React 19
           fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         >
@@ -50,40 +56,50 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <motion.div 
+      <motion.div
         style={{ y: textY, opacity: textOpacity }}
         className="relative z-10 text-center px-6 max-w-5xl mx-auto"
       >
         <motion.p
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-xs font-sans font-bold uppercase tracking-[0.25em] text-background/70 mb-10"
         >
           DISTRIBUIDORA PREMIUM - SÃO LUÍS-MA
         </motion.p>
         <motion.h1
-          initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.25 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif text-background mb-10 tracking-tight leading-[1.1]"
         >
           O OURO DA <br /> TRADIÇÃO URUGUAIA🇺🇾
         </motion.h1>
         <motion.p
-          initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="text-lg md:text-xl text-background/80 font-sans font-light tracking-wide mb-12 max-w-2xl mx-auto"
         >
-          Noble Leche — Doce de Leite Premium para clientes e consumidores exigentes.
+          Noble Leche — Doce de Leite Premium para clientes e consumidores
+          exigentes.
         </motion.p>
         <motion.div
-          initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.75 }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <Button asChild variant="cream" size="lg">
             <Link href="#contato">Quero ser parceiro</Link>
           </Button>
-          <Button asChild variant="ghost" size="lg" className="text-background border-background/20 hover:bg-background/10 hover:text-background">
+          <Button
+            asChild
+            variant="ghost"
+            size="lg"
+            className="text-background border-background/20 hover:bg-background/10 hover:text-background"
+          >
             <Link href="#produto">Conhecer o produto</Link>
           </Button>
         </motion.div>

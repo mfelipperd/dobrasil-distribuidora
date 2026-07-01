@@ -11,34 +11,59 @@ export default function Footer() {
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         {/* Brand Column */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <Link href="/" className="mb-6 inline-block bg-white px-4 py-2 rounded-xl shadow-sm">
-            <Image 
-              src="/images/DOBRASIL - original.png" 
-              alt="DO Brasil" 
-              width={180} 
-              height={60} 
-              className="h-10 w-auto object-contain"
+          <Link
+            href="/"
+            className="mb-6 inline-block bg-[#bca57f] px-4 py-2 rounded-xl shadow-sm"
+          >
+            <Image
+              src="/images/DOBRASIL LOGO AJUSTEPrancheta 1@4x.png"
+              alt="DO Brasil"
+              width={180}
+              height={60}
+              className=" w-auto object-contain"
             />
           </Link>
           <p className="text-sm font-sans font-light leading-relaxed text-primary/70 max-w-xs">
-            Especialistas em curadoria, distribuição e logística de alimentos premium de origem brasileira. Levando o melhor para o seu negócio.
+            Especialistas em curadoria, distribuição e logística de alimentos
+            premium de origem brasileira. Levando o melhor para o seu negócio.
           </p>
         </div>
 
         {/* Navigation Column */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="text-xs font-sans font-bold uppercase tracking-[0.2em] mb-6 text-primary/40">Navegação</h4>
+          <h4 className="text-xs font-sans font-bold uppercase tracking-[0.2em] mb-6 text-primary/40">
+            Navegação
+          </h4>
           <nav className="flex flex-col gap-3 items-center md:items-start">
-            <Link href="/" className="hover:text-primary/60 transition-colors">Início</Link>
-            <Link href="/doce-de-leite" className="hover:text-primary/60 transition-colors">Produtos</Link>
-            <Link href="#receitas" className="hover:text-primary/60 transition-colors">Inspiração</Link>
-            <Link href="#contato" className="hover:text-primary/60 transition-colors">Fale com Consultor</Link>
+            <Link href="/" className="hover:text-primary/60 transition-colors">
+              Início
+            </Link>
+            <Link
+              href="/doce-de-leite"
+              className="hover:text-primary/60 transition-colors"
+            >
+              Produtos
+            </Link>
+            <Link
+              href="#receitas"
+              className="hover:text-primary/60 transition-colors"
+            >
+              Inspiração
+            </Link>
+            <Link
+              href="#contato"
+              className="hover:text-primary/60 transition-colors"
+            >
+              Fale com Consultor
+            </Link>
           </nav>
         </div>
 
         {/* Contact Column */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="text-xs font-sans font-bold uppercase tracking-[0.2em] mb-6 text-primary/40">Contato</h4>
+          <h4 className="text-xs font-sans font-bold uppercase tracking-[0.2em] mb-6 text-primary/40">
+            Contato
+          </h4>
           <div className="flex flex-col gap-4 text-sm font-light">
             <InfoPopover message="WhatsApp em atualização. Por favor, utilize o formulário de contato ao lado para falar com um consultor.">
               <div className="flex items-center gap-3 hover:text-primary/60 transition-colors cursor-pointer">
@@ -46,20 +71,31 @@ export default function Footer() {
                 +55 98 9189-7797
               </div>
             </InfoPopover>
-            <a href="mailto:contato@dobrasilgroup.com.br" className="flex items-center gap-3 hover:text-primary/60 transition-colors">
+            <a
+              href="mailto:contato@dobrasilgroup.com.br"
+              className="flex items-center gap-3 hover:text-primary/60 transition-colors"
+            >
               <Mail size={16} className="text-primary/40" />
               contato@dobrasilgroup.com.br
             </a>
             <div className="flex items-start gap-3">
               <MapPin size={16} className="text-primary/40 mt-1" />
-              <span>São Luís, Maranhão — Brasil<br /><span className="text-xs opacity-50">Parceria logística em todo território nacional</span></span>
+              <span>
+                São Luís, Maranhão — Brasil
+                <br />
+                <span className="text-xs opacity-50">
+                  Parceria logística em todo território nacional
+                </span>
+              </span>
             </div>
           </div>
         </div>
 
         {/* Social Column */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="text-xs font-sans font-bold uppercase tracking-[0.2em] mb-6 text-primary/40">Siga-nos</h4>
+          <h4 className="text-xs font-sans font-bold uppercase tracking-[0.2em] mb-6 text-primary/40">
+            Siga-nos
+          </h4>
           <div className="flex items-center gap-3">
             <InfoPopover message="Instagram em atualização. Em breve disponibilizaremos nosso feed exclusivo.">
               <div className="p-3 bg-white rounded-full text-primary/40 hover:text-primary hover:shadow-md transition-all duration-300 shadow-sm cursor-pointer">
@@ -78,10 +114,23 @@ export default function Footer() {
       {/* Copyright Bar */}
       <div className="container mx-auto px-6 pt-10 border-t border-primary/5">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-sans text-primary/30 font-bold tracking-widest uppercase text-center md:text-left">
-          <p>&copy; {new Date().getFullYear()} DO BRASIL DISTRIBUIDORA. TODOS OS DIREITOS RESERVADOS.</p>
+          <p>
+            &copy; {new Date().getFullYear()} DO BRASIL DISTRIBUIDORA. TODOS OS
+            DIREITOS RESERVADOS.
+          </p>
           <div className="flex gap-8">
-            <Link href="/politica-de-privacidade" className="hover:text-primary transition-colors">Política de Privacidade</Link>
-            <Link href="/termos-de-uso" className="hover:text-primary transition-colors">Termos de Uso</Link>
+            <Link
+              href="/politica-de-privacidade"
+              className="hover:text-primary transition-colors"
+            >
+              Política de Privacidade
+            </Link>
+            <Link
+              href="/termos-de-uso"
+              className="hover:text-primary transition-colors"
+            >
+              Termos de Uso
+            </Link>
           </div>
         </div>
       </div>

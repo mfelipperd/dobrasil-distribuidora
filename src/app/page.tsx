@@ -24,11 +24,11 @@ export default function UnderConstruction() {
               transition={{ duration: 0.8 }}
               className="mb-10"
             >
-              <Image 
-                src="/images/DOBRASIL - original.png" 
-                alt="DO Brasil" 
-                width={350} 
-                height={110} 
+              <Image
+                src="/images/DOBRASIL LOGO AJUSTEPrancheta 1@4x.png"
+                alt="DO Brasil"
+                width={156}
+                height={110}
                 className="h-20 w-auto object-contain"
                 priority
               />

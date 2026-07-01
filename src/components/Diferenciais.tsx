@@ -115,9 +115,9 @@ export default function Diferenciais() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-white/10 transition-colors duration-700" />
 
           <div className="max-w-2xl relative z-10 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <div className="mb-6 relative w-48 h-20 bg-white p-4 rounded-xl shadow-sm">
+            <div className="mb-6 relative w-28 h-20 bg-white p-4 rounded-xl shadow-sm">
               <Image
-                src="/images/DOBRASIL - original.png"
+                src="/images/DOBRASIL LOGO AJUSTEPrancheta 1@4x.png"
                 alt="DOBRASIL Logo"
                 fill
                 className="object-contain object-left"

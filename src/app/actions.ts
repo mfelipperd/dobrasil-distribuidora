@@ -60,7 +60,7 @@ async function sendToGoogleSheets(data: ContactFormData) {
   }
 }
 
-const LOGO_URL = "https://www.dobrasilgroup.com.br/images/DOBRASIL%20-%20original.png";
+const LOGO_URL = "https://www.dobrasilgroup.com.br/images/dobrasil-logo-email.png";
 
 function escapeHtml(value: string) {
   return value
